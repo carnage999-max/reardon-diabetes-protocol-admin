@@ -154,13 +154,16 @@ export default function PatientDetailPage() {
           </div>
         </div>
         <div style={{ display:'flex', gap:5 }}>
-          {(['7d','30d','90d'] as const).map(w => (
-            <button key={w} className="btn btn-ghost btn-sm" disabled={!!exporting} onClick={() => exportPDF(w)}>
-              {exporting===w ? <Spin size={11}/> : <Download size={11}/>} {w} PDF
-            </button>
-          ))}
-          <button className="btn btn-primary btn-sm" onClick={() => setShowThresh(true)}>Set Thresholds</button>
-        </div>
+  {(['7d','30d','90d'] as const).map(w => (
+    <button key={w} className="btn btn-ghost btn-sm" disabled={!!exporting} onClick={() => exportPDF(w)}>
+      {exporting===w ? <Spin size={11}/> : <Download size={11}/>} {w} PDF
+    </button>
+  ))}
+  <button className="btn btn-ghost btn-sm" onClick={() => navigate(`/patients/${id}/meals`)}>   {/* ← ADD THIS */}
+    <Utensils size={11}/> Meals
+  </button>
+  <button className="btn btn-primary btn-sm" onClick={() => setShowThresh(true)}>Set Thresholds</button>
+</div>
       </div>
 
       {/* 6 stat cards */}
