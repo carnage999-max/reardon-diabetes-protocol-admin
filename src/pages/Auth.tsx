@@ -188,8 +188,8 @@ export function SetupPage() {
     <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24, background: 'var(--bg)' }}>
       <div style={{ width: '100%', maxWidth: 450, position: 'relative' }}>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 10, marginBottom: 24 }}>
-          <div style={{ width: 42, height: 42, borderRadius: 13, background: 'var(--cyan)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 0 22px rgba(0,191,224,0.3)' }}>
-            <Activity size={18} color="#030810" strokeWidth={2.5} />
+          <div style={{ width: 44, height: 44, borderRadius: 14, background: 'var(--cyan)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 0 26px rgba(0,191,224,0.32)' }}>
+            <img src={logo} alt="Reardon Protocol" style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: 14 }} />
           </div>
           <div style={{ textAlign: 'center' }}>
             <h1 style={{ fontFamily: 'Syne,sans-serif', fontSize: 17, fontWeight: 700, color: 'var(--text)' }}>Initial Setup</h1>
