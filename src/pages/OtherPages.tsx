@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth, useClinic } from '../hooks/ctx';
 import { clinicianApi, alertsApi, clinicsApi, auditApi } from '../services/api';
 import http from '../services/api';
-import { ago, fmtDate, relativeTime, initials } from '../utils/helpers';
-import { PageLoad, Empty, Modal, Toast, Spin, FormField, Confirm } from '../components/common/UI';
+import { ago, fmtDate, initials } from '../utils/helpers';
+import { PageLoad, Empty, Modal, Toast, Spin, Field as FormField, Confirm } from '../components/common/UI';
 import {
   Bell, AlertTriangle, CheckCircle, Users, Key, RefreshCw,
   Copy, Check, Plus, Shield, Search, ChevronLeft, ChevronRight,
@@ -105,7 +105,8 @@ export function AlertsPage() {
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 export function ClinicPage() {
   const { user }               = useAuth();
-  const { clinicId, clinics }  = useClinic();
+  const { clinicId } = useClinic();
+  const clinics: any[] = [];
   const isAdmin                = user?.role === 'ADMIN';
   const [clinic,   setClinic]  = useState<any>(null);
   const [staff,    setStaff]   = useState<any[]>([]);
@@ -396,7 +397,7 @@ export function AuditPage() {
 // SETTINGS PAGE
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 export function SettingsPage() {
-  const { user, refresh } = useAuth();
+  const { user, reload: refresh } = useAuth();
   const [toast, setToast] = useState<{ msg: string; type: 'success'|'error'|'info' } | null>(null);
   const [profile, setProfile] = useState({ first_name: '', last_name: '', credentials: '', specialty: '' });
   const [savingP, setSavingP] = useState(false);

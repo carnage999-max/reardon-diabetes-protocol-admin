@@ -2,7 +2,7 @@ import { useState, FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 import { Activity, Eye, EyeOff } from 'lucide-react';
-import { Spinner } from '../components/common/UI';
+import { Spin as Spinner } from '../components/common/UI';
 
 export default function LoginPage() {
   const { login } = useAuth();

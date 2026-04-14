@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const http = axios.create({ baseURL: 'https://diabetes-api.reardonprotocol.com/v1', timeout: 60_000 });
+const BASE = `${import.meta.env.VITE_API_TARGET ?? 'https://diabetes-api.reardonprotocol.com'}/v1`;
+
+const http = axios.create({ baseURL: BASE, timeout: 60_000 });
 
 // Attach token
 http.interceptors.request.use(cfg => {
@@ -16,7 +18,7 @@ http.interceptors.response.use(r => r, async err => {
     orig._retry = true;
     try {
       const rt = localStorage.getItem('rp_refresh');
-      const { data } = await axios.post('https://diabetes-api.reardonprotocol.com/v1/auth/refresh', { refresh_token: rt });
+      const { data } = await axios.post(`${BASE}/auth/refresh`, { refresh_token: rt });
       localStorage.setItem('rp_token', data.data.access_token);
       orig.headers.Authorization = `Bearer ${data.data.access_token}`;
       return http(orig);

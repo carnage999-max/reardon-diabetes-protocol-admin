@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { Auth } from '../services/api';
+import { authApi as Auth } from '../services/api';
 
 interface User {
   id: string; email: string; role: 'CLINICIAN' | 'ADMIN';

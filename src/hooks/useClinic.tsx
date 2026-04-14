@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect, ReactNode, useCallback } from 'react';
-import api, { Clinics } from '../services/api';
+import api, { clinicsApi as Clinics } from '../services/api';
 import { useAuth } from './useAuth';
 
 interface ClinicCtx {

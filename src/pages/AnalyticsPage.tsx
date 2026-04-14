@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Clinician } from '../services/api';
-import { PageLoader, Empty } from '../components/common/UI';
+import { clinicianApi as Clinician } from '../services/api';
+import { PageLoad as PageLoader, Empty } from '../components/common/UI';
 import { BarChart2, Users, TrendingUp, Activity } from 'lucide-react';
 import {
   ResponsiveContainer, BarChart, Bar, XAxis, YAxis,

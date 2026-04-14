@@ -1,7 +1,7 @@
 import { useState, FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../services/api';
-import { Spinner } from '../components/common/UI';
+import { Spin as Spinner } from '../components/common/UI';
 import { Activity, Check, ChevronRight, Eye, EyeOff, Copy } from 'lucide-react';
 
 type Step = 'admin' | 'clinic' | 'clinician' | 'done';
